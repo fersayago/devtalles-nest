@@ -13,3 +13,10 @@ export const bulbasaur: Pokemon = {
   id: 1,
   name: 'Bulbasaur',
 }
+
+export const charmander: Pokemon = {
+  id: 4,
+  name: 'Charmander',
+}
+
+export const pokemons: Pokemon[] = [bulbasaur, charmander]
