@@ -14,9 +14,9 @@ export const bulbasaur: Pokemon = {
   name: 'Bulbasaur',
 }
 
-export const charmander: Pokemon = {
-  id: 4,
-  name: 'Charmander',
+export const ivysaur: Pokemon = {
+  id: 2,
+  name: 'Ivysaur',
 }
 
-export const pokemons: Pokemon[] = [bulbasaur, charmander]
+export const pokemons: Pokemon[] = [bulbasaur, ivysaur]
