@@ -1,3 +1,4 @@
+import axios from "axios";
 
 // Definir clases de forma explicita
 // export class Pokemon {
@@ -35,9 +36,19 @@ export class Pokemon {
   private speak() {
     console.log(`${ this.name } ${ this.name }`)
   }
+
+  async getMoves(){
+    // const resp = await axios.get('https://pokeapi.co/api/v2/pokemon/4')
+    // return resp.data.moves;
+
+    const { data } = await axios.get('https://pokeapi.co/api/v2/pokemon/4')
+    return data.moves;
+  }
 }
 
 export const charmander = new Pokemon( 4, 'Charmander' )
 
-//charmander.speak()
-charmander.scream()
+// charmander.speak()
+// charmander.scream()
+
+charmander.getMoves()
