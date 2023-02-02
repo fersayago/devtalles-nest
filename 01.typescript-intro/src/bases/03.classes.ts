@@ -1,4 +1,5 @@
 import axios from "axios";
+import { PokeApiAdapter } from "../api/pokeApi.adapter";
 import { PokeapiResponse, Move } from "../interfaces/pokeapi-response.interface";
 
 // Definir clases de forma explicita
@@ -25,6 +26,8 @@ export class Pokemon {
     public id: number,
     public name: string,
     // public imageUrl: string
+    // ! Inyeccion de dependencias
+    private readonly http: PokeApiAdapter
   ) {}
 
   // ! METODOS: funciones que tienen acceso a las propiedades y otros metodos
@@ -42,12 +45,14 @@ export class Pokemon {
     // const resp = await axios.get('https://pokeapi.co/api/v2/pokemon/4')
     // return resp.data.moves;
 
-    const { data } = await axios.get<PokeapiResponse>('https://pokeapi.co/api/v2/pokemon/4')
+    const data = await this.http.get('https://pokeapi.co/api/v2/pokemon/4')
     return data.moves;
   }
 }
 
-export const charmander = new Pokemon( 4, 'Charmander' )
+const PokeApi = new PokeApiAdapter()
+
+export const charmander = new Pokemon( 4, 'Charmander', PokeApi )
 
 // charmander.speak()
 // charmander.scream()
