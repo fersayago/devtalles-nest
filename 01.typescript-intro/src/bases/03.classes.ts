@@ -1,6 +1,6 @@
 import axios from "axios";
-import { PokeApiAdapter } from "../api/pokeApi.adapter";
-import { PokeapiResponse, Move } from "../interfaces/pokeapi-response.interface";
+import { PokeApiAdapter, PokeApiFetchAdapter } from '../api/pokeApi.adapter';
+import { PokeapiResponse, Move } from '../interfaces/pokeapi-response.interface';
 
 // Definir clases de forma explicita
 // export class Pokemon {
@@ -45,14 +45,16 @@ export class Pokemon {
     // const resp = await axios.get('https://pokeapi.co/api/v2/pokemon/4')
     // return resp.data.moves;
 
-    const data = await this.http.get('https://pokeapi.co/api/v2/pokemon/4')
+    const data = await this.http.get<PokeapiResponse>('https://pokeapi.co/api/v2/pokemon/4')
     return data.moves;
   }
 }
 
-const PokeApi = new PokeApiAdapter()
+// const PokeApiAxios = new PokeApiAdapter()
+const PokeApiFetch = new PokeApiFetchAdapter()
 
-export const charmander = new Pokemon( 4, 'Charmander', PokeApi )
+// export const charmander = new Pokemon( 4, 'Charmander', PokeApiAxios )
+export const charmander = new Pokemon( 4, 'Charmander', PokeApiFetch )
 
 // charmander.speak()
 // charmander.scream()
