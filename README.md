@@ -40,3 +40,5 @@ Aquí veremos:
 - Decoradores de clases y métodos
 
 Es importante recalcar que esto no es una introducción a TypeScript, son conceptos que necesito exponer porque los usaremos en el curso de Nest.
+
+Es importante entender que la principal diferencia entre clases e interfaces es que la clase permite crear instancias como si fuese un molde mientras que la interfaz sirve solo para crear reglas y condiciones ya que no tiene ninguna representación

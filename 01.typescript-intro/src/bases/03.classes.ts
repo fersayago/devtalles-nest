@@ -1,5 +1,4 @@
-import axios from "axios";
-import { PokeApiAdapter, PokeApiFetchAdapter } from '../api/pokeApi.adapter';
+import { HttpAdapter, PokeApiAdapter, PokeApiFetchAdapter } from '../api/pokeApi.adapter';
 import { PokeapiResponse, Move } from '../interfaces/pokeapi-response.interface';
 
 // Definir clases de forma explicita
@@ -27,7 +26,7 @@ export class Pokemon {
     public name: string,
     // public imageUrl: string
     // ! Inyeccion de dependencias
-    private readonly http: PokeApiAdapter
+    private readonly http: HttpAdapter
   ) {}
 
   // ! METODOS: funciones que tienen acceso a las propiedades y otros metodos
@@ -50,7 +49,7 @@ export class Pokemon {
   }
 }
 
-// const PokeApiAxios = new PokeApiAdapter()
+const PokeApiAxios = new PokeApiAdapter()
 const PokeApiFetch = new PokeApiFetchAdapter()
 
 // export const charmander = new Pokemon( 4, 'Charmander', PokeApiAxios )
