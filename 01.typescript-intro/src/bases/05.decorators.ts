@@ -20,6 +20,7 @@ export class NewPokemon {
   }
 }
 
+// este decorador se encarga de sobreescribir la clase a la hora de crear la clase
 const MyDecorator = () => {
   return ( target: Function ) => {
     console.log(target)
