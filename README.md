@@ -42,3 +42,18 @@ Aquí veremos:
 Es importante recalcar que esto no es una introducción a TypeScript, son conceptos que necesito exponer porque los usaremos en el curso de Nest.
 
 Es importante entender que la principal diferencia entre clases e interfaces es que la clase permite crear instancias como si fuese un molde mientras que la interfaz sirve solo para crear reglas y condiciones ya que no tiene ninguna representación
+
+# Sección 3: Primeros pasos en Nest
+- ¿Qué es Nest?
+- ¿Por qué usarlo?
+- Explicacion sobnre cada archivo en un proyecto nuevo de Nest
+- Core Nest building blocks
+  - Módulos
+  - Controladores (Post, Patch, Get, Delete)
+  - Primeros decoradores
+  - Servicios
+  - Inyección de dependencias
+  - Pipes
+  - Exception Filters
+
+Adicionalmente estaremos creando un Rest Api inicial para ir explicando cada concepto paso a paso.
