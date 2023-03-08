@@ -57,3 +57,14 @@ Es importante entender que la principal diferencia entre clases e interfaces es 
   - Exception Filters
 
 Adicionalmente estaremos creando un Rest Api inicial para ir explicando cada concepto paso a paso.
+
+# Sección 4: DTOs y validación de información
+Esta sección terminaremos el POST, PATCH, DELETE de nuestro CRUD inicial, pero de forma puntual veremos:
+- DTO (Data Transfer Object)
+- Patch, Post, Delete
+- Validaciones automáticas
+- Class Validator
+- Class Transformer
+- Seguir en principio DRY
+- Algunos decoradores del Class Validator útiles
+
