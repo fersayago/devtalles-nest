@@ -7,14 +7,11 @@ import {
   ParseUUIDPipe,
   Patch,
   Post,
-  UsePipes,
-  ValidationPipe,
 } from '@nestjs/common';
 import { CarsService } from './cars.service';
 import { CreateCarDto } from './dto/create-car.dto';
 
 @Controller('cars')
-@UsePipes(ValidationPipe)
 export class CarsController {
   // La inyección de dependencias se realiza en el constructor
   constructor(private readonly carsService: CarsService) {}
