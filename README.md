@@ -68,3 +68,15 @@ Esta sección terminaremos el POST, PATCH, DELETE de nuestro CRUD inicial, pero 
 - Seguir en principio DRY
 - Algunos decoradores del Class Validator útiles
 
+#Sección 5: Nest CLI Resource - Brands CRUD
+Esta sección es un reforzamiento de lo aprendido hasta el momento, pero le adicionamos la <b>comunicación</b> entre módulos y servicios. Puntualmente:
+- SEED Endpoint
+  - Llenar data de Autos y Marcas
+  - Comunicar módulo seed, con los otros módulos de nuestra aplicación.
+- Errores comunes a la hora de utilizar módulos enlazados
+- Problemas con inyección de dependencias de módulos externos
+- Brans CRUD completo
+  - Endpoints
+  - DTOs
+  - Servicios
+  - Controladores
