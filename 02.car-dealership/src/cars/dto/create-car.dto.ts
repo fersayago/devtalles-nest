@@ -1,4 +1,4 @@
-import { IsString, minLength, MinLength } from 'class-validator';
+import { IsString, MinLength } from 'class-validator';
 
 export class CreateCarDto {
   @IsString({ message: 'La marca del auto debe ser un string' })
