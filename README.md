@@ -83,3 +83,14 @@ Esta sección es un reforzamiento de lo aprendido hasta el momento, pero le adic
 
 # Sección 6: Generar build de producción básico
 El objetivo de esta sección es generar una build de producción con Nest para poder utilizarla sin Nest. Mas adelante se podra desplegar en la nube pero la idea de esta sección es poder desplegarlo en nuestra computadora.
+
+# Sección 7:  MongoDB Pokedex
+Esta sección enteramente se enfoca en la grabación a base de datos, pero puntualmente:
+- Validaciones
+- CRUD contra base de datos
+- Docker y Docker Compose
+- Conectar contenedor con filesystem (para mantener la data de la base de datos)
+- Schemas
+- Modelos
+- DTOs y sus textensiones
+- Respaldar a Github
