@@ -57,4 +57,8 @@ export class BrandsService {
       brand.id !== id;
     });
   }
+
+  fillBrandsWithSeedData(brands: Brand[]) {
+    this.brands = brands;
+  }
 }
