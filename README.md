@@ -68,7 +68,7 @@ Esta sección terminaremos el POST, PATCH, DELETE de nuestro CRUD inicial, pero 
 - Seguir en principio DRY
 - Algunos decoradores del Class Validator útiles
 
-#Sección 5: Nest CLI Resource - Brands CRUD
+# Sección 5: Nest CLI Resource - Brands CRUD
 Esta sección es un reforzamiento de lo aprendido hasta el momento, pero le adicionamos la <b>comunicación</b> entre módulos y servicios. Puntualmente:
 - SEED Endpoint
   - Llenar data de Autos y Marcas
@@ -80,3 +80,6 @@ Esta sección es un reforzamiento de lo aprendido hasta el momento, pero le adic
   - DTOs
   - Servicios
   - Controladores
+
+# Sección 6: Generar build de producción básico
+El objetivo de esta sección es generar una build de producción con Nest para poder utilizarla sin Nest. Mas adelante se podra desplegar en la nube pero la idea de esta sección es poder desplegarlo en nuestra computadora.
