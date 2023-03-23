@@ -23,4 +23,4 @@ en caso de usar Linux o Mac se debe utilizar un usuario root
 
 ## Stack usado
 * MongoDB
-* Nest
+* Nest<>
