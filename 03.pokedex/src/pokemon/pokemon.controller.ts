@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   Delete,
+  HttpCode,
+  HttpStatus,
 } from '@nestjs/common';
 import { PokemonService } from './pokemon.service';
 import { CreatePokemonDto } from './dto/create-pokemon.dto';
@@ -16,11 +18,14 @@ export class PokemonController {
   constructor(private readonly pokemonService: PokemonService) {}
 
   @Post()
+  @HttpCode(201)
   create(@Body() createPokemonDto: CreatePokemonDto) {
     return this.pokemonService.create(createPokemonDto);
   }
 
   @Get()
+  // otra manera de mostrar los errores es importarlos de Nest con HttpStatus
+  @HttpCode(HttpStatus.OK)
   findAll() {
     return this.pokemonService.findAll();
   }
