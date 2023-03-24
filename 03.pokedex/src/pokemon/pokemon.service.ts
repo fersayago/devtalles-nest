@@ -80,12 +80,25 @@ export class PokemonService {
   }
 
   async remove(id: string) {
+    // ! Validamos y eliminamos en dos consultas
     // // const pokemon = await this.findOne(id);
     // // await pokemon.deleteOne();
     // return id;
 
-    const result = this.pokemonModel.findByIdAndDelete(id);
-    return result;
+    // ! Eliminamos en una consulta sin validar
+    // const result = await this.pokemonModel.findByIdAndDelete(id);
+
+    // ! Validamos y eliminamos en una consulta
+    const { deletedCount } = await this.pokemonModel.deleteOne({
+      _id: id,
+    });
+
+    if (deletedCount === 0)
+      throw new BadRequestException(
+        `No se encontro pokemon con el id "${id}" para eliminar`,
+      );
+
+    return;
   }
 
   private handleExceptions(error: any) {
