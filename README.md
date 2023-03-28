@@ -103,3 +103,15 @@ Esta seccipon tiene por objetivo aprender:
 - DTOs para Query parameters
 - Transformación de DTOs
 Tambien vamos a ver formas de hacer inserciones por lote y varias formas de lograrlo.
+
+# Sección 9: Variables de entorno - Deployment y Dockerizar la aplicación
+En esta sección trabajaremos en la configuración de variables de entorno y su validación. Los temas a ver son:
+- Dockerización
+- Mongo Atlas
+- Env file
+- joi
+- Validation Schemas
+- Configuration Module
+- Recomendaciones para un Readme útil
+- Despliegues
+- Dockerfile
