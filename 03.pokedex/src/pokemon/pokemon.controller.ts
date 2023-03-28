@@ -30,8 +30,7 @@ export class PokemonController {
   // otra manera de mostrar los errores es importarlos de Nest con HttpStatus
   @HttpCode(HttpStatus.OK)
   findAll(@Query() paginationDto: PaginationDto) {
-    console.log(paginationDto);
-    return this.pokemonService.findAll();
+    return this.pokemonService.findAll(paginationDto);
   }
 
   @Get(':term')
