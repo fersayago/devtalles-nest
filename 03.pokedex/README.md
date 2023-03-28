@@ -21,6 +21,10 @@ docker-compose up -d
 ```
 en caso de usar Linux o Mac se debe utilizar un usuario root
 
+5. Reconstruir la base de datos con la semilla
+```
+http://localhost:3000/api/v2/seed
+```
 ## Stack usado
 * MongoDB
 * Nest<>
