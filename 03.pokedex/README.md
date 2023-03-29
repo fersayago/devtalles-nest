@@ -21,7 +21,16 @@ docker-compose up -d
 ```
 en caso de usar Linux o Mac se debe utilizar un usuario root
 
-5. Reconstruir la base de datos con la semilla
+5. Clomar el archivo __.env.template__ y renombrar la copia a __.env__
+
+6. Llenar las variables de entorno definidas en el ```.env```
+
+7. Ejecutar la aplicación ene dev:
+```
+yarn start:dev
+```
+
+8. Reconstruir la base de datos con la semilla
 ```
 http://localhost:3000/api/v2/seed
 ```
