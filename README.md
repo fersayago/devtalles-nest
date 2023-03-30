@@ -115,3 +115,18 @@ En esta sección trabajaremos en la configuración de variables de entorno y su 
 - Recomendaciones para un Readme útil
 - Despliegues
 - Dockerfile
+
+# Sección 10: TypeORM - Postgres
+En esta sección estaremos trabajando con:
+- TypeORM
+- Postgres
+- CRUD
+- Constrains
+- Validaciones
+- Búsquedas
+- Paginaciones
+- DTOs
+- Entities
+- Decoradores de TypeORM para entidades
+- Métodos BeforeInsert, BeforeUpdate
+Es una sección importante porque a partir de aca, empezamos a construir sobre ells relaciones, autenticación, autorización y websockets.
