@@ -1,5 +1,6 @@
 import { IsString } from 'class-validator';
-import { Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Product } from './product.entity';
 
 @Entity()
 export class ProductImage {
@@ -8,4 +9,7 @@ export class ProductImage {
 
   @IsString()
   url: string;
+
+  @ManyToOne(() => Product, (product) => product.images)
+  product: Product;
 }
