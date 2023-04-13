@@ -130,3 +130,17 @@ En esta sección estaremos trabajando con:
 - Decoradores de TypeORM para entidades
 - Métodos BeforeInsert, BeforeUpdate
 Es una sección importante porque a partir de aca, empezamos a construir sobre ells relaciones, autenticación, autorización y websockets.
+
+# Sección 11: Relaciones en TypeORM
+En esta sección nos enfocamos en contenido especifico de base de datos relacionales:
+- Relaciones
+  - De uno a muchos
+  - De muchos a uno
+- Query Runner
+- Query Builder
+- Transacciones
+- Commits y Rollbacks
+- Renombrar tablas
+- Creación de un SEED
+- Aplanar resultados
+La idea es hacer que nuestro endpoint de creación y actualización de producto permita la actualización de una tabla secundaria de la misma forma como lo hemos creado en la sección anterior.
