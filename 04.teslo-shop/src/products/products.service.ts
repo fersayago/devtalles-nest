@@ -12,6 +12,7 @@ import { Product } from './entities/product.entity';
 import { Repository } from 'typeorm';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { validate as isUUID } from 'uuid';
+import { ProductImage } from './entities';
 
 @Injectable()
 export class ProductsService {
@@ -20,23 +21,22 @@ export class ProductsService {
   constructor(
     @InjectRepository(Product)
     private readonly productRepository: Repository<Product>,
+
+    @InjectRepository(ProductImage)
+    private readonly productImageRepository: Repository<ProductImage>,
   ) {}
 
   async create(createProductDto: CreateProductDto) {
     try {
-      // if (!createProductDto.slug) {
-      //   createProductDto.slug = createProductDto.title
-      //     .toLowerCase()
-      //     .replaceAll(' ', '')
-      //     .replaceAll("'", '');
-      // } else {
-      //   createProductDto.slug = createProductDto.slug
-      //     .toLowerCase()
-      //     .replaceAll(' ', '')
-      //     .replaceAll("'", '');
-      // }
+      const { images = [], ...producDetails } = createProductDto;
 
-      const product = this.productRepository.create(createProductDto);
+      const product = this.productRepository.create({
+        ...producDetails,
+        images: images.map((image) =>
+          this.productImageRepository.create({ url: image }),
+        ),
+        // como lo estoy creando aca, ORM va a inferir el productId ya que las instancias de el productImages la estamos creando desde el producto mismo
+      });
 
       await this.productRepository.save(product);
 
@@ -81,6 +81,7 @@ export class ProductsService {
     const product = await this.productRepository.preload({
       id: id,
       ...updateProductDto,
+      images: [],
     });
 
     if (!product) new NotFoundException(`product with id: ${id} not found`);
