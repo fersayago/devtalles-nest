@@ -108,12 +108,37 @@ export class ProductsService {
     if (!product) new NotFoundException(`product with id: ${id} not found`);
 
     // Create query runner
+    // ! Se crea el query runner fuera del try catch ya que si sucede algun error se pueda hacer el rollback de la transacción y el release en el catch
     const queryRunner = this.dataSource.createQueryRunner();
 
+    await queryRunner.connect();
+    await queryRunner.startTransaction();
+
     try {
-      await this.productRepository.save(product);
-      return product;
+      if (images) {
+        // se puede usar this.productRepository.delete()
+        // pero vamos a usar el Query runner
+        // vamos a borrar todas las productImages cuya columna productId sea igual al id
+        await queryRunner.manager.delete(ProductImage, { product: { id } });
+
+        product.images = images.map((image) =>
+          this.productImageRepository.create({ url: image }),
+        );
+      } else {
+        // TODO: Como resolvemos el product.images
+      }
+
+      await queryRunner.manager.save(product);
+
+      await queryRunner.commitTransaction();
+
+      await queryRunner.release();
+
+      return this.findOnePlain(id);
     } catch (err) {
+      await queryRunner.rollbackTransaction();
+      await queryRunner.release();
+
       this.handleDBExceptions(err);
     }
   }
