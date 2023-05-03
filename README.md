@@ -144,3 +144,7 @@ En esta sección nos enfocamos en contenido especifico de base de datos relacion
 - Creación de un SEED
 - Aplanar resultados
 La idea es hacer que nuestro endpoint de creación y actualización de producto permita la actualización de una tabla secundaria de la misma forma como lo hemos creado en la sección anterior.
+
+# Sección 12: Carga de archivos
+Se va a trabajar con la carga de archivos al backend. No se recomienda colocar archivos fisicicamente en el backend, lo que se recomienda es subirlos y colocarlos en un hosting o servicio diferente.
+Veremos validaciones y control de carga de cualquier archivo hacia el backend.
