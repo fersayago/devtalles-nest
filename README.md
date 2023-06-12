@@ -148,3 +148,19 @@ La idea es hacer que nuestro endpoint de creación y actualización de producto 
 # Sección 12: Carga de archivos
 Se va a trabajar con la carga de archivos al backend. No se recomienda colocar archivos fisicicamente en el backend, lo que se recomienda es subirlos y colocarlos en un hosting o servicio diferente.
 Veremos validaciones y control de carga de cualquier archivo hacia el backend.
+
+# Sección 13: Autenticación y autorización
+Esta es una de las seccionse mas grandes del curso. Puntualmente se va a tratar:
+- Autenticación
+- Autorización
+- Json Web Tokens
+- Hash de contraseñas
+- Nest passport
+- Módulos asíncronos
+- Protección de rutas
+- Custom Method Decorators
+- Custom Class Decorators
+- Custom Property Decorators
+- Enlazar usuarios con productos
+- Bearer Tokens
+- Mas
