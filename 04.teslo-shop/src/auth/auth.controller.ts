@@ -1,7 +1,9 @@
-import { Controller, Post, Body, Get, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, Get, UseGuards, Req } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginUserDto, CreateUserDto } from './dto';
 import { AuthGuard } from '@nestjs/passport';
+import { GetUser } from './decorators/get-user.decorator';
+import { User } from './entities/user.entity';
 
 @Controller('auth')
 export class AuthController {
@@ -17,16 +19,16 @@ export class AuthController {
     return this.authService.login(loginUserDto);
   }
 
-  // TODO: Tener acceso a los parametros que estan dentro del JWT token para devolverlos
   @Get('private')
   @UseGuards(AuthGuard())
-  testingPrivateRoute() {
+  testingPrivateRoute(
+    // @Req() request: Express.Request
+    @GetUser(['email', 'role', 'fullName']) user: User,
+  ) {
     return {
       ok: true,
       message: 'Hola mundo private',
-      user: {
-        name: 'Fernando',
-      },
+      user,
     };
   }
 }
