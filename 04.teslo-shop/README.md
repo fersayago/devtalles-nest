@@ -15,11 +15,12 @@
 ```
 docker-compose up -d
 ```
-6. Ejecutar el Seed para llenar la BBDD
+6. Realizar la conexión mediante TablePlus y crear la DB TesloDB
+7. Ejecutar el Seed para llenar la BBDD
 ```
 http://localhost:3000/api/seed
 ```
-7. Levantar el proyecto:
+8. Levantar el proyecto:
 ```
 yarn start:dev
 ```
